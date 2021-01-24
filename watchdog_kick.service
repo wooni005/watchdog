@@ -1,0 +1,12 @@
+[Unit]
+Description=Watchdog trigger / kicker
+After=syslog.target network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/pi/scripts/python/watchdog/watchdog_kick.py
+User=root
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

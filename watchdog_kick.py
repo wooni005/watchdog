@@ -4,13 +4,13 @@ import time
 import os
 from watchdogdev import watchdog
 
-exit = False
+exitThread = False
 
 os.nice(20)
 time.sleep(20)                  # Wait before starting
 wd = watchdog('/dev/watchdog')
 
-while not exit:
+while not exitThread:
     wd.keep_alive()
     # print ("Kick")
     time.sleep(5)
